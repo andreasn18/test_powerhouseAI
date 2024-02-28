@@ -74,7 +74,7 @@ class MainActivity : ComponentActivity() {
                     fusedLocation()
                     AppNavigation(navController)
                     if (weatherVM.noInternetToast) {
-                        Toast.makeText(this, "No Internet Connection. Retrying in 5 seconds", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "No Internet Connection", Toast.LENGTH_SHORT).show()
                         weatherVM.noInternetToast = false
                     }
                 }

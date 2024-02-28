@@ -45,12 +45,6 @@ class WeatherViewModel(private val weatherRepository: WeatherRepository) : ViewM
             if (response == null) {
                 _weathers.value = weatherRepository.getAllWeathers()
                 noInternetToast = true
-                delay(5000)
-                if (numRetry < 3) {
-                    refreshData()
-                    numRetry++
-                }
-                return@launch
             } else {
                 numRetry = 0
                 var sameLocation = _weathers.value.find {
